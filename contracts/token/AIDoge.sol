@@ -10,6 +10,7 @@ import "../interfaces/ICamelotFactory.sol";
 import "../interfaces/ICamelotRouter.sol";
 import "../interfaces/IWETH.sol";
 import "../interfaces/IDogeBonusPool.sol";
+
 contract AIDoge is ERC20, Ownable {
     using SafeERC20 for IERC20;
     using EnumerableSet for EnumerableSet.AddressSet;
