@@ -28,7 +28,7 @@ contract CamelotFactory is ICamelotFactory {
     event SetStableOwnershipTransferred(address indexed prevOwner, address indexed newOwner);
     event ReferrerFeeShareUpdated(address referrer, uint prevReferrerFeeShare, uint referrerFeeShare);
 
-    constructor(address feeTo_) public {
+    constructor(address feeTo_) {
         owner = msg.sender;
         feePercentOwner = msg.sender;
         setStableOwner = msg.sender;

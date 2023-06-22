@@ -96,7 +96,7 @@ contract CamelotPair is ICamelotPair, UniswapV2ERC20 {
     event Sync(uint112 reserve0, uint112 reserve1);
     event Skim();
 
-    constructor() public {
+    constructor() {
         factory = msg.sender;
     }
 
