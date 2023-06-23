@@ -35,10 +35,21 @@ RPC ：https://goerli-rollup.arbitrum.io/rpc
 ### 空投 / 邀请奖励
 对应 [contracts/pool/DistributionPool.sol](contracts/pool/DistributionPool.sol)
 
+```
+function claim(uint128 nonce, bytes calldata signature,address referrer) public
+nonce: 时间戳
+signature: 对 message 进行签名
+referrer: 邀请人钱包地址，没邀请人时 referrer 填自己或者 0x0
+
+
+function getInfoView(address user) public view returns (InfoView memory)
+获取对应钱包地址的空投奖励信息；
+```
 
 
 ### Earn 功能
 对应 [contracts/pool/DogeBonusPool.sol](contracts/pool/DogeBonusPool.sol)
+
 
 
 ### 代币合约

@@ -41,14 +41,17 @@ contract DistributionPool is OwnableUpgradeable {
     mapping(address => bool) public _claimedUser;
     mapping(address => uint256) public inviteRewards;
 
-    uint256 public claimedSupply = 0;
-    uint256 public claimedCount = 0;
-    uint256 public claimedPercentage = 0;
+    uint256 public claimedSupply;
+    uint256 public claimedCount;
+    uint256 public claimedPercentage;
     mapping(address => uint256) public inviteUsers;
 
     function initialize(address token_) external initializer {
         __Ownable_init();
         token = IERC20(token_);
+        claimedSupply = 0;
+        claimedCount = 0;
+        claimedPercentage = 0;
     }
 
     function canClaimAmount() public view returns (uint256) {
