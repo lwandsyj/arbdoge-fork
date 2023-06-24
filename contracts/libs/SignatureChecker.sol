@@ -17,7 +17,7 @@ library SignatureChecker {
         bytes32 message,
         bytes calldata signature
     ) internal view returns (bool) {
-        return signers.contains(ECDSA.recover(message, signature));
+        return signers.contains(ECDSA.recover(ECDSA.toEthSignedMessageHash(message), signature));
     }
 
     /**
