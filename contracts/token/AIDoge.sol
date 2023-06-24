@@ -109,7 +109,7 @@ contract AIDoge is ERC20, Ownable {
         address _swapRouter,
         address _weth
     ) ERC20("AIDOGE", "AIDOGE") {
-        uint256 _totalSupply = 210_000_000_000_000_000 * 1e6;
+        uint256 _totalSupply = 5_000_000_000 * 1e6;
         backToken = _backToken;
         canAddLiquidityBeforeLaunch[_msgSender()] = true;
         canAddLiquidityBeforeLaunch[address(this)] = true;

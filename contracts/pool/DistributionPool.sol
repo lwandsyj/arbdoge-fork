@@ -11,9 +11,11 @@ contract DistributionPool is OwnableUpgradeable {
     using EnumerableSet for EnumerableSet.AddressSet;
     using SignatureChecker for EnumerableSet.AddressSet;
 
-    uint256 public constant MAX_ADDRESSES = 625143;
-    uint256 public constant MAX_TOKEN = 210_000_000_000_000_000 * 1e6;
-    uint256 public constant INIT_CLAIM = 1_292_000_000_000 * 1e6;
+    uint256 public constant MAX_ADDRESSES = 10000;
+    // 40% for airdrop and invitation
+    uint256 public constant MAX_TOKEN = 2_000_000_000 * 1e6;
+    // INIT_CLAIM ≈ MAX_TOKEN / (4.927942405962074 * MAX_ADDRESSES / 20) * 0.97
+    uint256 public constant INIT_CLAIM = 800_000 * 1e6;
 
     struct InfoView {
         uint256 maxToken;
@@ -101,9 +103,8 @@ contract DistributionPool is OwnableUpgradeable {
             claimedPercentage = (claimedCount * 100) / MAX_ADDRESSES;
         }
 
-        // 受邀人 claim 奖励时，自动再以奖励的10%的比例分配给邀请人；
         if (referrer != address(0) && referrer != _msgSender()) {
-            uint256 num = (amount * 100) / 1000;
+            uint256 num = (amount * 30) / 1000;
             token.transfer(referrer, num);
             inviteRewards[referrer] += num;
             inviteUsers[referrer]++;

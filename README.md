@@ -33,7 +33,9 @@ RPC ：https://goerli-rollup.arbitrum.io/rpc
 ## 合约文档
 
 ### 空投 / 邀请奖励
-对应 [contracts/pool/DistributionPool.sol](contracts/pool/DistributionPool.sol)
+
+对应 [contracts/pool/DistributionPool.sol](contracts/pool/DistributionPool.sol)，
+合约交互参考测试用例 [test/distributionpool.test.ts](test/distributionpool.test.ts)
 
 ```
 function claim(uint128 nonce, bytes calldata signature,address referrer) public
@@ -46,15 +48,13 @@ function getInfoView(address user) public view returns (InfoView memory)
 获取对应钱包地址的空投奖励信息；
 ```
 
-
 ### Earn 功能
+
 对应 [contracts/pool/DogeBonusPool.sol](contracts/pool/DogeBonusPool.sol)
 
-
-
 ### 代币合约
-对应 [contracts/token/AIDoge.sol](contracts/token/AIDoge.sol)
 
+对应 [contracts/token/AIDoge.sol](contracts/token/AIDoge.sol)
 
 ## 编译
 
