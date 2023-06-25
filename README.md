@@ -2,7 +2,7 @@
 
 ## 需求
 
-仿 Arbdoge [https://arbdoge.io/](https://arbdoge.io/)
+仿 Arbdoge [https://arbdoge.ai/](https://arbdoge.ai/)
 
 ```
 总量50亿
@@ -46,11 +46,16 @@ referrer: 邀请人钱包地址，没邀请人时 referrer 填自己或者 0x0
 
 function getInfoView(address user) public view returns (InfoView memory)
 获取对应钱包地址的空投奖励信息；
+
+// arb 空投钱包地址列表
+https://arbiscan.io/address/0x67a24ce4321ab3af51c2d0a4801c3e111d88c9d9
 ```
 
-### Earn 功能
+### Earn / 单币质押功能
 
 对应 [contracts/pool/DogeBonusPool.sol](contracts/pool/DogeBonusPool.sol)
+
+合约交互参考测试用例 [test/dogebonuspool.test.ts](test/dogebonuspool.test.ts)
 
 ### 代币合约
 

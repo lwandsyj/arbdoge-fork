@@ -10,7 +10,7 @@ async function main() {
   );
   const DistributionPoolProxy = await upgrades.deployProxy(
     DistributionPoolFactory,
-    ["0x000000000000000000000000000000000000FFFF"], // ERC20 token
+    ["0x000000000000000000000000000000000000FFFF"], // ERC20 token，注意部署前修改配置
     {
       initializer: "initialize",
     }

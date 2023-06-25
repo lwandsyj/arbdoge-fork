@@ -6,13 +6,21 @@ import { BigNumber } from "ethers";
 env.config();
 
 async function main() {
+  // 注意：部署前修改配置
+  const rewardToken = "0x912ce59144191c1204e64559fe8253a0e49e6548"; // staking 奖励币种
+  const rewardsPerSecond = BigNumber.from("42516962188318141");
+  const startTime = BigNumber.from("1682769600");
+  const bonusEndTime = BigNumber.from("1700000000");
+  const maxStakingPerUser = BigNumber.from(
+    "356811923176489970264571492362373784095686655" // 2^148 - 1
+  );
   const DogeBonusPoolFactory = await ethers.getContractFactory("DogeBonusPool");
   const DogeBonusPoolProxy = await DogeBonusPoolFactory.deploy(
-    "0x912ce59144191c1204e64559fe8253a0e49e6548",
-    BigNumber.from("42516962188318141"),
-    BigNumber.from("1682769600"),
-    BigNumber.from("1700000000"),
-    BigNumber.from("356811923176489970264571492362373784095686655")
+    rewardToken,
+    rewardsPerSecond,
+    startTime,
+    bonusEndTime,
+    maxStakingPerUser
   );
   await DogeBonusPoolProxy.deployed();
   const DogeBonusPool = DogeBonusPoolFactory.attach(DogeBonusPoolProxy.address);
