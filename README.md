@@ -38,23 +38,21 @@ RPC ：https://goerli-rollup.arbitrum.io/rpc
 合约交互参考测试用例 [test/distributionpool.test.ts](test/distributionpool.test.ts)
 
 ```
+// nonce: 时间戳
+// signature: 对 message 进行签名
+// referrer: 邀请人钱包地址，没邀请人时 referrer 填自己或者 0x0
 function claim(uint128 nonce, bytes calldata signature,address referrer) public
-nonce: 时间戳
-signature: 对 message 进行签名
-referrer: 邀请人钱包地址，没邀请人时 referrer 填自己或者 0x0
 
-
+// 获取对应钱包地址的空投奖励信息；
 function getInfoView(address user) public view returns (InfoView memory)
-获取对应钱包地址的空投奖励信息；
 
 // arb 空投钱包地址列表
-https://arbiscan.io/address/0x67a24ce4321ab3af51c2d0a4801c3e111d88c9d9
+// https://arbiscan.io/address/0x67a24ce4321ab3af51c2d0a4801c3e111d88c9d9
 ```
 
 ### Earn / 单币质押功能
 
-对应 [contracts/pool/DogeBonusPool.sol](contracts/pool/DogeBonusPool.sol)
-
+对应 [contracts/pool/DogeBonusPool.sol](contracts/pool/DogeBonusPool.sol)，
 合约交互参考测试用例 [test/dogebonuspool.test.ts](test/dogebonuspool.test.ts)
 
 ### 代币合约
