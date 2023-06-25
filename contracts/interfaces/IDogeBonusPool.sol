@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity >=0.5.0;
+pragma solidity =0.8.19;
 
 interface IDogeBonusPool {
     function deposit(uint256 _pid, uint256 _amount) external;
