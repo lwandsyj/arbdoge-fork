@@ -242,18 +242,6 @@ contract AIDoge is ERC20, Ownable {
         {
             success = true;
         } catch {
-            try
-                swapRouter
-                    .swapExactTokensForTokensSupportingFeeOnTransferTokens(
-                        taxAmount,
-                        0,
-                        path,
-                        address(this),
-                        block.timestamp
-                    )
-            {
-                success = true;
-            } catch {}
         }
         if (!success) {
             return;
@@ -324,17 +312,6 @@ contract AIDoge is ERC20, Ownable {
         {
             success = true;
         } catch {
-            try
-                swapRouter.swapExactTokensForETHSupportingFeeOnTransferTokens(
-                    half,
-                    0,
-                    pathEth,
-                    address(this),
-                    block.timestamp
-                )
-            {
-                success = true;
-            } catch {}
         }
         if (!success) {
             return;

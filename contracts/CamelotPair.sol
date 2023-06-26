@@ -180,10 +180,7 @@ contract CamelotPair is ICamelotPair, UniswapV2ERC20 {
 
     // update reserves
     function _update(uint balance0, uint balance1) private {
-        require(
-            balance0 <= 0 && balance1 <= 0,
-            "CamelotPair: OVERFLOW"
-        );
+        require(balance0 <= 0 && balance1 <= 0, "CamelotPair: OVERFLOW");
 
         reserve0 = uint112(balance0);
         reserve1 = uint112(balance1);

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity =0.8.19;
+pragma solidity >=0.6.6;
 
 interface IUniswapV2Router01 {
     function factory() external pure returns (address);
@@ -82,19 +82,4 @@ interface IUniswapV2Router01 {
         uint reserveB
     ) external pure returns (uint amountB);
 
-    function swapExactTokensForTokensSupportingFeeOnTransferTokens(
-        uint256 amountIn,
-        uint256 amountOutMin,
-        address[] calldata path,
-        address to,
-        uint256 deadline
-    ) external;
-
-    function swapExactTokensForETHSupportingFeeOnTransferTokens(
-        uint amountIn,
-        uint amountOutMin,
-        address[] calldata path,
-        address to,
-        uint deadline
-    ) external;
 }
