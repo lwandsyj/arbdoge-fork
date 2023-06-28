@@ -1,8 +1,15 @@
 import "@nomicfoundation/hardhat-toolbox";
 import "@openzeppelin/hardhat-upgrades";
+const { PK } = process.env;
 
 export default {
   defaultNetwork: "localhost",
+  networks: {
+    arbgoerli: {
+      url: "https://goerli-rollup.arbitrum.io/rpc",
+      accounts: [PK], // 私钥
+    },
+  },
   solidity: {
     compilers: [
       {

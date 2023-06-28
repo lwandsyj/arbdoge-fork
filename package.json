@@ -5,7 +5,11 @@
   "license": "MIT",
   "scripts": {
     "deploy:distributionpool:local": "npx hardhat run scripts/deploy-distributionpool.ts --network localhost",
-    "deploy:dogebonuspool:local": "npx hardhat run scripts/deploy-dogebonuspool.ts --network localhost"
+    "deploy:distributionpool:arbgoerli": "npx hardhat run scripts/deploy-distributionpool.ts --network arbgoerli",
+    "deploy:dogebonuspool:local": "npx hardhat run scripts/deploy-dogebonuspool.ts --network localhost",
+    "deploy:dogebonuspool:arbgoerli": "npx hardhat run scripts/deploy-dogebonuspool.ts --network arbgoerli",
+    "deploy:aidogetoken:local": "npx hardhat run scripts/deploy-aidogetoken.ts --network localhost",
+    "deploy:aidogetoken:arbgoerli": "npx hardhat run scripts/deploy-aidogetoken.ts --network arbgoerli"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
