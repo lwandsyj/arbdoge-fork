@@ -46,8 +46,11 @@ RPC ：https://goerli-rollup.arbitrum.io/rpc
 
 ### 空投/邀请奖励
 
-对应 [contracts/pool/DistributionPool.sol](contracts/pool/DistributionPool.sol)，
+对应 [contracts/pool/DistributionPool.sol](contracts/pool/DistributionPool.sol)
+
 合约交互参考测试用例 [test/distributionpool.test.ts](test/distributionpool.test.ts)
+
+部署脚本 [scripts/deploy-distributionpool.ts](scripts/deploy-distributionpool.ts)
 
 ```
 // nonce: 时间戳
@@ -64,13 +67,18 @@ function getInfoView(address user) public view returns (InfoView memory)
 
 ### Earn/单币质押功能
 
-对应 [contracts/pool/DogeBonusPool.sol](contracts/pool/DogeBonusPool.sol)，
+对应 [contracts/pool/DogeBonusPool.sol](contracts/pool/DogeBonusPool.sol)
+
 合约交互参考测试用例 [test/dogebonuspool.test.ts](test/dogebonuspool.test.ts)
+
+部署脚本 [scripts/deploy-dogebonuspool.ts](scripts/deploy-dogebonuspool.ts)
 
 ### 代币合约
 
-对应 [contracts/token/AIDoge.sol](contracts/token/AIDoge.sol)，
-合约交互参考测试用例 [test/aidogetoken.test.ts](test/aidogetoken.test.ts)，
+对应 [contracts/token/AIDoge.sol](contracts/token/AIDoge.sol)
+
+合约交互参考测试用例 [test/aidogetoken.test.ts](test/aidogetoken.test.ts)
+
 部署脚本 [scripts/deploy-aidogetoken.ts](scripts/deploy-aidogetoken.ts)
 
 ```
