@@ -1,5 +1,17 @@
 # ArbDoge Fork
 
+- [需求](#需求)
+- [合约文档](#合约文档)
+  - [空投-/-邀请奖励](#空投-/-邀请奖励)
+  - [Earn-/-单币质押功能](#Earn-/-单币质押功能)
+  - [代币合约](#代币合约)
+- [编译](#编译)
+- [测试](#测试)
+- [部署](#部署)
+  - [部署-earn-/-单币-staking-合约：](#部署-earn-/-单币-staking-合约：)
+  - [部署-Airdrop-(带邀请奖励)-合约：](<#部署-Airdrop-(带邀请奖励)-合约：>)
+  - [部署代币合约：](#部署代币合约：)
+
 ## 需求
 
 仿 Arbdoge [https://arbdoge.ai/](https://arbdoge.ai/)
@@ -57,7 +69,18 @@ function getInfoView(address user) public view returns (InfoView memory)
 
 ### 代币合约
 
-对应 [contracts/token/AIDoge.sol](contracts/token/AIDoge.sol)
+对应 [contracts/token/AIDoge.sol](contracts/token/AIDoge.sol)，
+合约交互参考测试用例 [test/aidogetoken.test.ts](test/aidogetoken.test.ts)，
+部署脚本 [scripts/deploy-aidogetoken.ts](scripts/deploy-aidogetoken.ts)
+
+```
+// 部署前注意确认，配置参考 aidoge
+const backtoken = "0x912CE59144191C1204E64559FE8253a0e49E6548"; // LP staking 奖励币种, ARB
+const factory = "0x6EcCab422D763aC031210895C81787E87B43A652";   // Camelot factory
+const router = "0xc873fEcbd354f5A56E00E710B90EF4201db2448d";    // Camelot router
+const WETH = "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1";
+
+```
 
 ## 编译
 
@@ -74,7 +97,47 @@ REPORT_GAS=true npx hardhat test
 
 ## 部署
 
-```
-npx hardhat run scripts/deploy.ts
+### 部署 earn / 单币 staking 合约：
 
+本地：
+
+```
+yarn deploy:dogebonuspool:local
+```
+
+Arbitrum goerli testnet：
+
+```
+// PK 为私钥，本地添加进 .env 文件或者在命令执行时加入
+PK=xxxxxxxx yarn deploy:dogebonuspool:arbgoerli
+```
+
+### 部署 Airdrop (带邀请奖励) 合约：
+
+本地：
+
+```
+yarn deploy:distributionpool:local
+```
+
+Arbitrum goerli testnet：
+
+```
+// PK 为私钥，本地添加进 .env 文件或者在命令执行时加入
+PK=xxxxxxxx yarn deploy:distributionpool:arbgoerli
+```
+
+### 部署代币合约：
+
+本地：
+
+```
+yarn deploy:aidogetoken:local
+```
+
+Arbitrum goerli testnet：
+
+```
+// PK 为私钥，本地添加进 .env 文件或者在命令执行时加入
+PK=xxxxxxxx yarn deploy:aidogetoken:arbgoerli
 ```
