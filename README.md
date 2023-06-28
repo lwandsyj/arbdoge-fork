@@ -8,8 +8,8 @@
 - [编译](#编译)
 - [测试](#测试)
 - [部署](#部署)
-  - [部署 Earn / 单币 staking 合约：](#部署earn单币staking合约)
-  - [部署 Airdrop 合约：](#部署airdrop合约)
+  - [部署 Earn / 单币 staking 合约：](#部署-earn单币-staking-合约)
+  - [部署 Airdrop 合约：](#部署-airdrop-合约)
   - [部署代币合约：](#部署代币合约)
 
 ## 需求
